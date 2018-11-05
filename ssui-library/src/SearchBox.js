@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import Book from "./Book.js";
 import "./App.css";
 
-const apiKey = "AIzaSyB4YWu-lpr0OzS6xaaBpUZV0X79sO5QRmc";
+const apiKey = ""; //TODO
 
 class SearchBox extends Component {
   state = {
