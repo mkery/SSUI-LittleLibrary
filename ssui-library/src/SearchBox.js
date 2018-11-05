@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import Book from "./Book.js";
 import "./App.css";
+
+const apiKey = "AIzaSyB4YWu-lpr0OzS6xaaBpUZV0X79sO5QRmc";
 
 class SearchBox extends Component {
   state = {
     typing: false,
-    query: ""
+    query: "",
+    searchRes: null
   };
 
   componentDidMount() {
@@ -17,7 +21,12 @@ class SearchBox extends Component {
   }
 
   render() {
-    return <div className="searchBox">{this.searchContent()}</div>;
+    return (
+      <div>
+        <div className="searchBox">{this.searchContent()}</div>
+        {this.showResults()}
+      </div>
+    );
   }
 
   searchContent() {
@@ -51,8 +60,34 @@ class SearchBox extends Component {
   }
 
   handleKeyPress(event) {
-    if (event.key == "Enter") {
+    if (event.key === "Enter") {
       console.log("enter press here! ", this.state.query);
+      this.search();
+    }
+  }
+
+  search() {
+    fetch(
+      "https://www.googleapis.com/books/v1/volumes?q=intitle:" +
+        this.state.query +
+        "&key=" +
+        apiKey,
+      {
+        method: "get"
+      }
+    )
+      .then(response => {
+        if (response) return response.json();
+      })
+      .then(results => {
+        console.log(results.items);
+        this.setState({ searchRes: results.items });
+      });
+  }
+
+  showResults() {
+    if (this.state.searchRes) {
+      return this.state.searchRes.map(book => <Book data={book} />);
     }
   }
 }
