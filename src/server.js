@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/catalog", catalogRouter);
 
 app.get("/api/hello", (req, res) => {
-  res.send({ express: "Hello From Express" });
+  res.send({ express: "Success! Server is up and running" });
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
