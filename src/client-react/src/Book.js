@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./App.css";
 
 class Book extends Component {
   render() {
@@ -8,25 +7,19 @@ class Book extends Component {
         <img
           className="BookImage"
           src={this.coverImage()}
-          alt={"book cover image of " + this.title()}
+          alt={"book cover image of " + this.props.data.title}
         />
         <div className="BookDesc">
-          <div className="BookTitle">{this.title()}</div>
-          <div className="BookAuthor">
-            by {this.props.data.volumeInfo.authors}
-          </div>
+          <div className="BookTitle">{this.props.data.title}</div>
+          <div className="BookAuthor">by {this.props.data.authors}</div>
           <div className="BookUnavilable">Book not in current collection.</div>
         </div>
       </div>
     );
   }
 
-  title() {
-    return this.props.data.volumeInfo.title;
-  }
-
   coverImage() {
-    let links = this.props.data.volumeInfo.imageLinks;
+    let links = this.props.data.imageLinks;
     if (links) return links.thumbnail;
     else return null;
   }

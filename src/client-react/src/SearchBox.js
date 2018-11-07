@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import Book from "./Book.js";
-import "./App.css";
 
-const apiKey = "AIzaSyB4YWu-lpr0OzS6xaaBpUZV0X79sO5QRmc";
+const apiKey = "";
 
 class SearchBox extends Component {
   state = {
@@ -33,7 +32,7 @@ class SearchBox extends Component {
     if (!this.state.typing) {
       return (
         <div className="searchContent" onClick={() => this.startTyping()}>
-          Take a look and find a book
+          Search all books in the world
           <span className="blinking-cursor">|</span>
         </div>
       );
@@ -66,28 +65,14 @@ class SearchBox extends Component {
   }
 
   search() {
-    fetch(
-      "https://www.googleapis.com/books/v1/volumes?q=intitle:" +
-        this.state.query +
-        "&key=" +
-        apiKey,
-      {
-        method: "get"
-      }
-    )
-      .then(response => {
-        if (response) return response.json();
-      })
-      .then(results => {
-        console.log(results.items);
-        this.setState({ searchRes: results.items });
-      });
+    //TODO
+    // API call is https://www.googleapis.com/books/v1/volumes?q=intitle:
   }
 
   showResults() {
     if (this.state.searchRes) {
       return this.state.searchRes.map(book => (
-        <Book data={book} key={book.id} />
+        <Book data={book.volumeInfo} key={book.id} />
       ));
     }
   }

@@ -1,14 +1,8 @@
 import React, { Component } from "react";
-import "./App.css";
 import SearchBox from "./SearchBox.js";
+import Catalog from "./Catalog.js";
 
 class App extends Component {
-  componentDidMount() {
-    fetch("/api/hello")
-      .then(res => res.json())
-      .then(users => console.log("PONG!", users));
-  }
-
   render() {
     return (
       <div className="App">
@@ -18,6 +12,9 @@ class App extends Component {
           a free library traveling book truck of Pittsburgh, PA
         </div>
         <SearchBox />
+        <br />
+        <div className="subtitle">Browse Our Collection</div>
+        <Catalog />
       </div>
     );
   }

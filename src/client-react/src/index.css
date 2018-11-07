@@ -165,3 +165,25 @@ body {
   color: orangered;
   margin-top: 2em;
 }
+
+.menuItem {
+  cursor: default;
+  font-family: "Lato", sans-serif;
+  font-size: 12pt;
+  color: white;
+  background: darkslategray;
+  width: fit-content;
+  margin: 5px;
+  padding: 5pt;
+  margin-top: 15pt;
+  text-transform: uppercase;
+  display: inline-block;
+  border-radius: 10px;
+}
+.menuItem:hover {
+  background-color: seagreen;
+}
+.menuItem.active {
+  background-color: #eee;
+  color: black;
+}
