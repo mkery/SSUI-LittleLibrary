@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css?family=Lato|Playfair+Display");
+
+body {
+  margin: 5vw;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  background-image: url(images/spek.svg);
+  background-position: left;
+  background-size: 35vw;
+  font-family: "Lato", sans-serif;
+  font-size: 12pt;
+}
+
+#logo {
+  width: 20vw;
+  height: 20vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin: auto;
+  background-image: url(images/reader.svg);
+}
+
+.App {
+  text-align: center;
+  background-color: white;
+  padding: 1em;
+}
+
+.title {
+  font-family: "Playfair Display", serif;
+  font-size: 48pt;
+}
+
+.subtitle {
+  font-family: "Lato", sans-serif;
+  font-size: 12pt;
+  color: white;
+  background: #222;
+  width: fit-content;
+  margin: auto;
+  padding: 5pt;
+  margin-top: 15pt;
+  text-transform: uppercase;
+}
+
+.searchBox {
+  margin: 2em auto;
+  border-radius: 16pt;
+  border: 3px solid;
+  width: 60vw;
+  height: 14pt;
+  font-size: 14pt;
+  font-family: "Playfair Display", serif;
+  text-align: left;
+  padding: 14pt;
+  padding-top: 10pt;
+  padding-left: 2em;
+  background-color: white;
+}
+
+.searchContent {
+  width: 100%;
+  font-size: 14pt;
+  font-family: "Playfair Display", serif;
+  text-align: left;
+  border: none;
+  outline: transparent;
+}
+
+/*Cursor Copied from code pen https://codepen.io/ArtemGordinsky/pen/GnLBq*/
+.blinking-cursor {
+  font-weight: 600;
+  margin-left: 0.15em;
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes "blink" {
+  from,
+  to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-moz-keyframes blink {
+  from,
+  to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-webkit-keyframes "blink" {
+  from,
+  to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-ms-keyframes "blink" {
+  from,
+  to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-o-keyframes "blink" {
+  from,
+  to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+.Book {
+  padding: 5px;
+  margin: 10px auto;
+  width: 60vw;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.BookImage {
+  width: 20vw;
+  display: inline-block;
+  height: auto;
+  float: left;
+}
+
+.BookDesc {
+  width: calc(100% - 20vw - 20px);
+  display: inline-block;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.BookTitle {
+  font-size: 14pt;
+  font-family: "Playfair Display", serif;
+}
+
+.BookUnavilable {
+  font-size: 14pt;
+  font-family: "Playfair Display", serif;
+  color: orangered;
+  margin-top: 2em;
+}
